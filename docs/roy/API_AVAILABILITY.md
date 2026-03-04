@@ -79,3 +79,5 @@ This is a snapshot of tested endpoints on mainnet (api.bybit.com) from the curre
 - Spot dust convert: POST /v5/asset/exchange/quote-apply returned `retCode=790000 system error` for very small MNT balance (0.001312); likely below minimum convert threshold.
 - Spot sell precision: MNTUSDC market sell rejected when qty has too many decimals; basePrecision=0.01 (min step) per instruments-info.
 - CLI gap: bybit-assistant currently lacks a direct `order-cancel` command, so cancel requires direct API call or script update.
+- Suggested API improvement: expose a “safe order params” endpoint returning valid qty/price precision + min order amount.
+- Suggested API improvement: convert/dust endpoints should return explicit min threshold errors instead of system error.
